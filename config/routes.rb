@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/starwars' => 'home#starwars'
   get '/characters/:id' => 'home#characters'
   get '/all' => 'home#char_all'
+  get '/pokemon/:id' => 'home#pokemon'
 end

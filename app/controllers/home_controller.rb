@@ -24,4 +24,13 @@ class HomeController < ApplicationController
   def char_all
   end
 
+  def pokemon
+    num = params[:id]
+    url = "https://pokeapi.co/api/v2/pokemon/" + num
+    uri = URI.parse(url)
+    response = Net::HTTP.get_response(uri)
+    data = JSON.parse(response.body, symbolize_names: true)
+    @name = data[:forms][0][:name]
+  end
+
 end
